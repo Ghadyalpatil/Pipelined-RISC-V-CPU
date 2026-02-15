@@ -17,8 +17,9 @@ assign read_data2 = (rs2 == 0) ? 32'b0 : registers[rs2];
 
 // Synchronous write
 always @(posedge clk) begin
-    if (reg_write && rd != 0)
+    if (reg_write)
         registers[rd] <= write_data;
 end
+
 
 endmodule
